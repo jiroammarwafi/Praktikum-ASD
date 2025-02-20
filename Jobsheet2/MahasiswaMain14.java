@@ -17,5 +17,10 @@ public class MahasiswaMain14 {
         "24410202013", 3.25 ,"TI 2L");
         mhs2.updateIpk(3.30);
         mhs2.tampilkanInformasi();
+        System.out.println();
+        
+        Mahasiswa14 mhsJiro = new Mahasiswa14("Jiro Ammar Wafi",
+        "244107020190", 3.54, "TI 1E");
+        mhsJiro.tampilkanInformasi();
     }
 }
