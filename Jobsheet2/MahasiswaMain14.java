@@ -13,6 +13,9 @@ public class MahasiswaMain14 {
         mhs1.tampilkanInformasi();
         System.out.println();
 
-
+        Mahasiswa14 mhs2 = new Mahasiswa14("Annisa Nabila",
+        "24410202013", 3.25 ,"TI 2L");
+        mhs2.updateIpk(3.30);
+        mhs2.tampilkanInformasi();
     }
 }
