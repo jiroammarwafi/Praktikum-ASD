@@ -28,6 +28,7 @@ public class DosenMain14 {
                 System.out.println("Bidang Keahlian tidak berubah.");
             }
 
+            
         System.out.println();
         Dosen14 dsn2 = new Dosen14("VIT", "Vit Zuraida, S.Kom., M.Kom.",
          true, 2014, "IT-2");
