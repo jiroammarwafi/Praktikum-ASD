@@ -22,6 +22,7 @@ public class DosenMain14 {
                 String bidang = in.next();
                 dsn1.ubahKeahlian(bidang);
                 System.out.println("Bidang telah berubah.");
+                System.out.println();
                 dsn1.tampilInformasi();
             } else {
                 System.out.println("Bidang Keahlian tidak berubah.");
