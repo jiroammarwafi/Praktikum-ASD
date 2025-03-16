@@ -2,9 +2,7 @@ package minggu5;
 
 public class classPangkat {
     int nilai, pangkat;
-    public classPangkat () {
-        
-    }
+    public classPangkat () {}
 
     public classPangkat (int n, int p){
         nilai = n;
