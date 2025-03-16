@@ -15,6 +15,14 @@ public class classPangkat {
             hasil = hasil * a;
         } return hasil;
     }
+
+    int tanpaParameter(){
+        int hasil = 1;
+        for (int i=0; i<pangkat; i++){
+            hasil *= nilai;
+        } return hasil;
+    }
+    
     int pangkatDC (int a, int n) {
         if (n==1){
             return a;
