@@ -20,6 +20,11 @@ public class MainPangkat{
             System.out.println(p.nilai+"^"+p.pangkat+": "
             +p.pangkatBF(p.nilai, p.pangkat));
         }
+        System.out.println("\nHASIL METHOD TANPA PARAMETER:");
+        for (classPangkat p : png) {
+            System.out.println(p.nilai+"^"+p.pangkat+": "
+            +p.tanpaParameter());
+        }
         System.out.println("\nHASIL PANGKAT DIVIDE N CONQUER:");
         for (classPangkat p : png) {
             System.out.println(p.nilai+"^"+p.pangkat+": "
