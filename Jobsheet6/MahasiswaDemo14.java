@@ -42,6 +42,10 @@ public class MahasiswaDemo14 {
         list.bubbleSort();
         list.tampil();
 
+        System.out.println("\n>>> Sorting Ascending dengan SELECTION SORT");
+        list.SelectionSort();
+        list.tampil();
+
         in.close();
     }
     
