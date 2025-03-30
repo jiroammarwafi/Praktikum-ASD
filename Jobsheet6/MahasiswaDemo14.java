@@ -46,6 +46,10 @@ public class MahasiswaDemo14 {
         list.SelectionSort();
         list.tampil();
 
+        System.out.println("\n>>> Sorting Ascending dengan INSERTION SORT");
+        list.InsertionSort();
+        list.tampil();
+
         in.close();
     }
     
