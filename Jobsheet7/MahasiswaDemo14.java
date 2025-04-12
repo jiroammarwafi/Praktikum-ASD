@@ -33,18 +33,28 @@ public class MahasiswaDemo14 {
         System.out.println("\n>>> Data mahasiswa yang telah di input: ");
         list.tampil();
     
-        // Searching data secara sequential
         System.out.println("--------------------------------------");
         System.out.println("Data Searching");
         System.out.println("--------------------------------------");
         System.out.println("Masukkan IPK mahasiswa yang ingin dicari: ");
         System.out.print("IPK: "); double cari = in.nextDouble();
 
+        // // Searching data secara Sequential
         System.out.println("Searching secara Sequential");
         double posisi = list.sequentialSearching(cari);
         int pss = (int) posisi;
         list.tampilPosisi(cari, pss);
         list.tampilDataSearch(cari, pss);
+
+        System.out.println("--------------------------------------");
+
+        // Searching data secara Binary
+        System.out.println("Searching secara Binary");
+        double posisi2 = list.findBinarySearch(cari, 0, jumMhs-1);
+        int pss2 = (int) posisi2;
+        list.tampilPosisi(cari, pss2);
+        list.tampilDataSearch(cari, pss2);
+
         in.close();
     }
 }

@@ -96,7 +96,7 @@ public class MahasiswaBerprestasi14 {
             } else if (listMhs[mid].ipk > cari){
                 return findBinarySearch(cari, left, mid-1);
             } else {
-                return findBinarySearch(cari, mid-1, right);
+                return findBinarySearch(cari, mid+1, right);
             }
         } return -1;
     }
