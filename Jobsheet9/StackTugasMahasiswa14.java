@@ -64,8 +64,7 @@ public class StackTugasMahasiswa14 {
 
     public Mahasiswa14 reversePeek() {
         if (!isEmpty()) {
-            int tempTop = 0;
-            return stack[tempTop];
+            return stack[0];
         } else {
             System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan");
             return null;
