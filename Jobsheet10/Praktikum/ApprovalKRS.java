@@ -32,7 +32,7 @@ public class ApprovalKRS {
                         antrian.tambahAntrian(krs); count++;
                         break;
                     case 2:
-                            System.out.println("Melayani mahasiswa: ");
+                            System.out.println("Melayani KRS milik mahasiswa: ");
                             do {
                                 InfoKRS dilayani = antrian.layaniKRS();
                                 if (dilayani != null) {

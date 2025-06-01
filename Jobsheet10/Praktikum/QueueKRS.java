@@ -56,7 +56,7 @@ public class QueueKRS {
             System.out.println("Antrian kosong.");
             return;
         }
-        System.out.println("Daftar Mahasiswa dalam Antrian:");
+        System.out.println("Daftar KRS dalam Antrian:");
         System.out.println("NO - NIM - NAMA - PRODI - KELAS");
         for(int i = 0; i < size; i++) {
             int index = (front + i) % max;
@@ -69,7 +69,7 @@ public class QueueKRS {
         if(AntrianKosong()) {
             System.out.println("Antrian kosong.");
         } else {
-            System.out.println("Mahasiswa terdepan: ");
+            System.out.println("KRS dengan antrian terdepan: ");
             System.out.println("NIM - NAMA - PRODI - KELAS");
             data[front].tampilkanData();
             if (size >= 2) {
@@ -84,7 +84,7 @@ public class QueueKRS {
         if(AntrianKosong()) {
             System.out.println("Antrian kosong.");
         } else {
-            System.out.println("Mahasiswa terakhir: ");
+            System.out.println("KRS dengan antrian terakhir: ");
             System.out.println("NIM - NAMA - PRODI - KELAS");
             data[rear].tampilkanData();
         }
