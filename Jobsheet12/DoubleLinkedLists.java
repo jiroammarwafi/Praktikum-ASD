@@ -80,6 +80,7 @@ public class DoubleLinkedLists {
             System.out.println("List kosong, tidak bisa dihapus.");
             return;
         }
+        System.out.print("Data ini telah dihapus: "); head.data.tampil();
         if (head == tail) {
             head = tail = null;
         }else{
@@ -93,6 +94,7 @@ public class DoubleLinkedLists {
             System.out.println("List kosong, tidak bisa dihapus.");
             return;
         }
+        System.out.print("Data ini telah dihapus: "); tail.data.tampil();
         if (head == tail) {
             head = tail = null;
         }else {
