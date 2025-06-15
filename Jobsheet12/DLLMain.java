@@ -30,6 +30,13 @@ public class DLLMain {
            System.out.println("5. Tampilkan data");
            System.out.println("6. Cari Mahasiswa berdasarkan NIM");
            System.out.println("7. Masukkan data setelah urutan node tertentu");
+           System.out.println("8. Tambahkan node berdasarkan index");
+           System.out.println("9. Hapus node setelah key");
+           System.out.println("10. Hapus node berdasarkan index");
+           System.out.println("11. Tampilkan data paling depan");
+           System.out.println("12. Tampilkan data paling belakang");
+           System.out.println("13. Tampilkan data berdasarkan index");
+           System.out.println("14. Cek Jumlah Data saat ini");
            System.out.println("0. Keluar");
            System.out.print("Pilih Menu: "); pilihan = scan.nextInt(); scan.nextLine();
 
@@ -62,6 +69,30 @@ public class DLLMain {
                 System.out.print("Masukkan NIM sebagai kata kunci: "); String nimSearch = scan.nextLine();
                 list.insertAfter(nimSearch, mhs);
             }
+            case 8 -> {
+                Mahasiswa14 mhs = inputMahasiswa(scan);
+                System.out.print("Masukkan index: "); int index = scan.nextInt(); scan.nextLine();
+                list.addByIndex(index, mhs);
+            }
+            case 9 -> {
+                System.out.print("Masukkan NIM: "); String key = scan.nextLine();
+                list.removeAfter(key);
+            }
+            case 10 -> {
+                System.out.print("Masukkan index: "); int index = scan.nextInt();
+                list.removeByIndex(index);
+            }
+            case 11 -> {
+                System.out.println("Data pada urutan paling depan: "); list.getFirst();
+            }
+            case 12 -> {
+                System.out.println("Data pada urutan paling terakhir: "); list.getLast();
+            }
+            case 13 -> {
+                System.out.print("Masukkan Index: "); int cari = scan.nextInt(); scan.nextLine();
+                list.getIndex(cari);
+            }
+            case 14 -> list.getSize();
             case 0 -> System.out.println("Keluar dari program.");
             default -> System.out.println("Pilihan tidak valid!");
            }

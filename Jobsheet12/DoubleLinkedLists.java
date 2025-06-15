@@ -2,6 +2,7 @@ package Jobsheet12;
 
 public class DoubleLinkedLists {
     Node14 head, tail;
+    int size = 0;
     
     public DoubleLinkedLists() {
         head = tail = null;
@@ -20,6 +21,9 @@ public class DoubleLinkedLists {
             head.prev = newNode;
             head = newNode;
         }
+                System.out.println("Data telah masuk !");
+
+        size++;
     }
 
     public void addLast(Mahasiswa14 data) {
@@ -31,6 +35,9 @@ public class DoubleLinkedLists {
             newNode.prev = tail;
             tail = newNode;
         }
+                System.out.println("Data telah masuk !");
+
+        size++;
     }
 
     public void insertAfter(String keyNim, Mahasiswa14 data) {
@@ -57,6 +64,7 @@ public class DoubleLinkedLists {
             current.next.prev = newNode;
             current.next = newNode;
         }
+        size++;
         System.out.println("Node berhasil disisipkan setelah NIM " + keyNim);
     }
 
@@ -72,7 +80,6 @@ public class DoubleLinkedLists {
                 current = current.next;
             }
         }
-        
     }
 
     public void removeFirst(){
@@ -87,6 +94,7 @@ public class DoubleLinkedLists {
             head = head.next;
             head.prev = null;
         }
+        size--;
     }
 
     public void removeLast(){
@@ -101,6 +109,7 @@ public class DoubleLinkedLists {
             tail = tail.prev;
             tail.next = null;
         }
+        size--;
     }
 
     public Node14 search(String nim){
@@ -112,5 +121,100 @@ public class DoubleLinkedLists {
             current = current.next;
         }
         return null;
+    }
+
+    public void addByIndex(int cari, Mahasiswa14 data) {
+        if (isEmpty()) {
+            System.out.println("Tidak ada node yang tercatat.");
+            return;
+        } else {
+            Node14 temp = head;
+            int index = 0;
+            while (index != cari) {
+                temp = temp.next;
+                index++;
+            }
+
+            if (temp == head) {
+                addFirst(data); 
+                return;
+            } 
+            if (temp == tail) {
+                addLast(data);
+                return;
+            } else {
+                Node14 newNode = new Node14(data);
+                temp.prev.next = newNode;
+                newNode.next = temp;
+                temp.prev = newNode;
+                size++;
+                System.out.println("Data telah masuk !");
+            }
+        }
+    }
+
+    public void removeByIndex(int cari) {
+        if (isEmpty()) {
+            System.out.println("Tidak ada node yang tercatat.");
+            return;
+        } else {
+            Node14 temp = head;
+            int index = 0;
+            while (index != cari) {
+                temp = temp.next;
+                index++;
+            }
+            if (temp == tail) {
+                removeLast();
+                return;
+            } else {
+                temp.prev.next = temp.next;
+                temp.next.prev = temp.prev;
+                size--;
+                System.out.println("Data telah dihapus !");
+            }
+        }
+    }
+
+    public void getSize() {
+        System.out.printf("Jumlah data/size saat ini: %d%n", size);
+    }
+
+    public void getFirst() {
+        head.data.tampil();
+    }
+
+    public void getLast() {
+        tail.data.tampil();
+    }
+
+    public void getIndex(int cari) {
+        int index = 0;
+        Node14 sweep = head;
+        while (index != cari) {
+            sweep = sweep.next;
+            index++;
+        } sweep.data.tampil();
+    }
+
+    public void removeAfter(String keyNim) {
+        Node14 current = head;
+
+        while (current != null && !current.data.nim.equals(keyNim)) {
+            current = current.next;
+        }
+
+        if (current == null || current.next == null) {
+            System.out.println("Node dengan NIM " + keyNim + " tidak ditemukan.");
+            return;
+        }
+        if (current.next == tail) {
+            removeLast();
+        } else {
+            current.next = current.next.next;
+            current.next.prev = current;
+        }
+        size--;
+        System.out.printf("Node setelah NIM %s telah dihapus", keyNim);
     }
 }
