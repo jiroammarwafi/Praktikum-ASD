@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class DLLMain {
 
     public static Mahasiswa14 inputMahasiswa(Scanner scan){
+        System.out.println("-- Mengisi Data --");
         System.out.print("Masukkan NIM: ");
         String nim = scan.nextLine();
         System.out.print("Masukkan Nama: ");
@@ -11,7 +12,7 @@ public class DLLMain {
         System.out.print("Masukkan Kelas: ");
         String kelas = scan.nextLine();
         System.out.print("Masukkan IPK: ");
-        double ipk = scan.nextDouble();
+        double ipk = scan.nextDouble(); scan.nextLine();
         return new Mahasiswa14(nim, nama, kelas, ipk);
     }
 
@@ -28,6 +29,7 @@ public class DLLMain {
            System.out.println("4. Hapus di akhir");
            System.out.println("5. Tampilkan data");
            System.out.println("6. Cari Mahasiswa berdasarkan NIM");
+           System.out.println("7. Masukkan data setelah urutan node tertentu");
            System.out.println("0. Keluar");
            System.out.print("Pilih Menu: "); pilihan = scan.nextInt(); scan.nextLine();
 
@@ -53,6 +55,12 @@ public class DLLMain {
                 } else {
                     System.out.println("Data tidak ditemukan");
                 }
+            }
+            // Modifikasi 2
+            case 7 -> {
+                Mahasiswa14 mhs = inputMahasiswa(scan);
+                System.out.print("Masukkan NIM sebagai kata kunci: "); String nimSearch = scan.nextLine();
+                list.insertAfter(nimSearch, mhs);
             }
             case 0 -> System.out.println("Keluar dari program.");
             default -> System.out.println("Pilihan tidak valid!");

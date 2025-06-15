@@ -60,12 +60,19 @@ public class DoubleLinkedLists {
         System.out.println("Node berhasil disisipkan setelah NIM " + keyNim);
     }
 
+    // Modifikasi 1
     public void print() {
-        Node14 current = head;
-        while (current != null) {
-            current.data.tampil();
-            current = current.next;
+        if (isEmpty()) {
+            System.out.println("Linked List masih dalam keadaan kosong");
+            return;
+        } else {
+            Node14 current = head;
+            while (current != null) {
+                current.data.tampil();
+                current = current.next;
+            }
         }
+        
     }
 
     public void removeFirst() {
