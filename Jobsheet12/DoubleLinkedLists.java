@@ -75,12 +75,30 @@ public class DoubleLinkedLists {
         
     }
 
-    public void removeFirst() {
-
+    public void removeFirst(){
+        if (isEmpty()) {
+            System.out.println("List kosong, tidak bisa dihapus.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        }else{
+            head = head.next;
+            head.prev = null;
+        }
     }
 
-    public void removeLast() {
-
+    public void removeLast(){
+        if (isEmpty()) {
+            System.out.println("List kosong, tidak bisa dihapus.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        }else {
+            tail = tail.prev;
+            tail.next = null;
+        }
     }
 
     public Node14 search(String nim){
